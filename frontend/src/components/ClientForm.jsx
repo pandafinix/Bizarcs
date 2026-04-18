@@ -67,7 +67,7 @@ export default function ClientForm() {
   const onSubmit = async (data) => {
     setIsSubmitting(true);
     try {
-      const response = await fetch("http://localhost:5000/api/clients/submit", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL || "http://localhost:5000"}/api/clients/submit`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
